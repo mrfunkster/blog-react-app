@@ -1,0 +1,15 @@
+.top-menu {
+    height: 40px;
+    background-color: #303f9f;
+    position: relative;
+    z-index: 100;
+}
+.top-menu-pos {
+    justify-content: space-between;
+}
+
+@media(min-width: 992px) {
+    .top-menu {
+        background-color: #191919;
+    }
+}

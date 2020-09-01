@@ -14,15 +14,6 @@
     visibility: visible;
     opacity: 1;
 }
-.top-menu {
-    height: 40px;
-    background-color: #303f9f;
-    position: relative;
-    z-index: 100;
-}
-.top-menu-pos {
-    justify-content: space-between;
-}
 
 /* SOCIAL-LINKS Section */
 .social-links {
@@ -216,7 +207,6 @@ img {
     .mobile-pos-2 {
         order: 2;
     }
-
 }
 
 @media(max-width: 991px) {

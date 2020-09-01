@@ -2,9 +2,13 @@ import React from 'react'
 
 import './Header.css'
 
+import TopMenu from './TopMenu/TopMenu'
+
 const Header = () => {
     return (
-        <div>Header</div>
+        <header className="header">
+            <TopMenu />
+        </header>
     )
 }
 
