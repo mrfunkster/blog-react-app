@@ -1,0 +1,17 @@
+.social-links {
+    display: flex;
+}
+.social-link {
+    width: 37px;
+    opacity: .5;
+}
+.social-link > a {
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 767px) {
+    .social-links {
+        display: none;
+    }
+}
