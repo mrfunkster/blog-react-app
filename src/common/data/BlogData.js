@@ -58,6 +58,51 @@ const BlogData = [
         cardComments: "27",
         cardLikes: "84",
     },
+    
+    {
+        cardId: 15,
+        belonging: "blog-card-small-ver",
+        cardTag: "Lifestyle",
+        cardLink: "/",
+        cardName: "Food That Actually Taste Better When You Freeze",
+        cardImage: "/images/content/blog-small-vertical-1.png",
+        cardContent: "Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.",
+        cardAuthorName: "James Lemn",
+        cardAuthorPhoto: "/images/content/james-lemn.png",
+        cardDate: "Apri 15, 2020   10:15",
+        cardComments: "12",
+        cardLikes: "11",
+    },
+
+    {
+        cardId: 16,
+        belonging: "blog-card-small-ver",
+        cardTag: "Inspiration",
+        cardLink: "/",
+        cardName: "Why It’s Amazing To Date People Who Love Traveling",
+        cardImage: "/images/content/small-cart-vertical-2.png",
+        cardContent: "Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.",
+        cardAuthorName: "Dmytro Luhovskiy",
+        cardAuthorPhoto: "/images/content/henry_little_photo.png",
+        cardDate: "Apri 11, 2020   10:15",
+        cardComments: "14",
+        cardLikes: "2",
+    },
+
+    {
+        cardId: 17,
+        belonging: "blog-card-small-ver",
+        cardTag: "Lifestyle",
+        cardLink: "/",
+        cardName: "5 Useful Tips for Novice Painters",
+        cardImage: "/images/content/small-cart-vertical-3.png",
+        cardContent: "Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.",
+        cardAuthorName: "Henry Little",
+        cardAuthorPhoto: "/images/content/henry_little_photo.png",
+        cardDate: "Apri 14, 2020   10:15",
+        cardComments: "4",
+        cardLikes: "11",
+    },
 ]
 
 export default BlogData

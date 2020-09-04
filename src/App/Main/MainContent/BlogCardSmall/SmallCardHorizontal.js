@@ -23,16 +23,16 @@ const SmallCardHorizontal = () => {
                     cardLikes
                 })=>(
                     <SmallCardHorizontalItem key={cardId}
-                    cardTag = {cardTag}
-                    cardLink = {cardLink}
-                    cardName = {cardName}
-                    cardImage = {cardImage}
-                    cardContent = {cardContent}
-                    cardAuthorName = {cardAuthorName}
-                    cardAuthorPhoto = {cardAuthorPhoto}
-                    cardDate = {cardDate}
-                    cardComments = {cardComments}
-                    cardLikes = {cardLikes}
+                        cardTag = {cardTag}
+                        cardLink = {cardLink}
+                        cardName = {cardName}
+                        cardImage = {cardImage}
+                        cardContent = {cardContent}
+                        cardAuthorName = {cardAuthorName}
+                        cardAuthorPhoto = {cardAuthorPhoto}
+                        cardDate = {cardDate}
+                        cardComments = {cardComments}
+                        cardLikes = {cardLikes}
                     />
                 ))
             }
