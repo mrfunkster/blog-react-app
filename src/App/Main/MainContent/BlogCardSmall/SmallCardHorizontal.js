@@ -2,10 +2,11 @@ import React from 'react'
 
 import BlogData from '../../../../common/data/BlogData'
 import SmallCardHorizontalItem from './SmallCardHorizontalItem'
+import { BlogCardSizeSort } from '../../../../common/data/Functions'
 
-const smallCardHorizontalContent = BlogData.filter(dataObj => dataObj.belonging === "blog-card-small-hor");
-
-const SmallCardHorizontal = () => {
+const SmallCardHorizontal = ({
+    smallCardHorizontalContent = BlogCardSizeSort(BlogData, "blog-card-small-hor")
+}) => {
     return (
         <div className="blog-card-small-horizontal-section">
             {

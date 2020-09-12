@@ -20,13 +20,13 @@ const SmallCardVerticalItem = ({
                 <div className="social-activities">
                     <div className="author-activities comments">
                         <div className="icon">
-                            <img src="images/forum_white.png" alt=""/>
+                            <img src="/images/icons/forum_white.png" alt=""/>
                         </div>
                         <div className="text-info">{cardComments}</div>
                     </div>
                     <div className="author-activities likes">
                         <div className="icon">
-                            <img src="images/favorite_border_white.png" alt=""/>
+                            <img src="/images/icons/favorite_border_white.png" alt=""/>
                         </div>
                         <div className="text-info">{cardLikes}</div>
                     </div>

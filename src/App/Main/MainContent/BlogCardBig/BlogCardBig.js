@@ -4,10 +4,11 @@ import './BlogCardBig.css'
 import BlogCardBigItem from './BlogCardBigItem'
 
 import BlogData from '../../../../common/data/BlogData'
+import { BlogCardSizeSort } from '../../../../common/data/Functions'
 
-const cardBigContent = BlogData.filter(dataObj => dataObj.belonging === "blog-card-big");
-
-const BlogCardBig = () => {
+const BlogCardBig = ({
+    cardBigContent = BlogCardSizeSort(BlogData, "blog-card-big")
+}) => {
     return ( 
         <div className="blog-card-big-section">
             {
