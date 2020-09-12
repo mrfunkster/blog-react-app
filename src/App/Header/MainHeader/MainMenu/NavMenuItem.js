@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const NavMenuItem = ({
     name,
@@ -6,7 +7,7 @@ const NavMenuItem = ({
 }) => {
     return (
         <li>
-            <a href={link}>{name}</a>
+            <Link to={link}>{name}</Link>
         </li>
     )
 }

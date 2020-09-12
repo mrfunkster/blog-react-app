@@ -12,6 +12,9 @@ body {
 body.lock {
     overflow: hidden;
 }
+.react-app-code {
+    overflow: hidden;
+}
 
 .col-73 {
     width: 73%;

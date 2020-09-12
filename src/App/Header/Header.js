@@ -5,11 +5,17 @@ import './Header.css'
 import TopMenu from './TopMenu/TopMenu'
 import MainHeader from './MainHeader/MainHeader'
 
-const Header = () => {
+const Header = ({
+    burgerButtonPressed,
+    burgerButtonToggle
+}) => {
     return (
         <header className="header">
             <TopMenu />
-            <MainHeader />
+            <MainHeader 
+                burgerButtonPressed = {burgerButtonPressed}
+                burgerButtonToggle = {burgerButtonToggle}
+            />
         </header>
     )
 }

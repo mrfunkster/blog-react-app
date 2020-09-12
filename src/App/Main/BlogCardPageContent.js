@@ -5,6 +5,7 @@ import {motion} from 'framer-motion'
 class BlogCardPageContent extends Component {
 
     scrollToMyRef = () => window.scrollTo(0, this.myRef.offsetTop)
+    
     componentDidMount() {
         this.scrollToMyRef()
     }

@@ -10,11 +10,32 @@ import Footer from './Footer/Footer'
 
 class App extends Component {
 
+    state = {
+        burgerButtonPressed: false
+    }
+
+    burgerButtonToggle = () => {
+        let body = document.body;
+        console.log(body)
+        this.setState({
+            burgerButtonPressed: !this.state.burgerButtonPressed
+        })
+        if (!this.state.burgerButtonPressed) {
+            body.classList.add('lock')
+        } else {
+            body.classList.remove('lock')
+        }
+    }
+
     render() {
         return (
             <div className="react-app-code">
-                <Header />
+                <Header 
+                    burgerButtonToggle = {this.burgerButtonToggle}
+                    burgerButtonPressed = {this.state.burgerButtonPressed}
+                />
                 <Main />
+                <div className={this.state.burgerButtonPressed ? "overlay active" : "overlay"}></div>
                 <Footer />
             </div>
         )
