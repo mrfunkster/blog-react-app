@@ -5,7 +5,8 @@ import SmallCardVerticalItem from './SmallCardVerticalItem'
 import { BlogCardSizeSort } from '../../../../common/data/Functions'
 
 const SmallCardVertical = ({
-    smallCardVerticalContent = BlogCardSizeSort(BlogData, "blog-card-small-ver")
+    smallCardVerticalContent = BlogCardSizeSort(BlogData, "blog-card-small-ver"),
+    copyBlogDataToState
 }) => {
     return (
         <div className="blog-card-small-vertical-section">
@@ -34,6 +35,8 @@ const SmallCardVertical = ({
                         cardDate = {cardDate}
                         cardComments = {cardComments}
                         cardLikes = {cardLikes}
+                        cardId = {cardId}
+                        copyBlogDataToState = {copyBlogDataToState}
                     />
                 ))
             }

@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { linkNameParser } from '../../../../common/data/Functions'
 
 const BlogCardBigItem = ({
     cardTag,
-    cardLink,
     cardName,
     cardImage,
     cardContent,
@@ -10,7 +11,9 @@ const BlogCardBigItem = ({
     cardAuthorPhoto,
     cardDate,
     cardComments,
-    cardLikes
+    cardLikes,
+    cardId,
+    copyBlogDataToState,
 }) => {
     return (
         <div className="blog-card-big">
@@ -52,11 +55,11 @@ const BlogCardBigItem = ({
                             </div>
                         </div>
                     </div>
-                    <div className="additional-btn">
+                    <Link to={`/cards/${linkNameParser(cardName)}`} className="additional-btn" onClick={()=>copyBlogDataToState(cardId)}>
                         <div className="div"></div>
                         <div className="div"></div>
                         <div className="div"></div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

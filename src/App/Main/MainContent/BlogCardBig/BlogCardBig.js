@@ -7,7 +7,8 @@ import BlogData from '../../../../common/data/BlogData'
 import { BlogCardSizeSort } from '../../../../common/data/Functions'
 
 const BlogCardBig = ({
-    cardBigContent = BlogCardSizeSort(BlogData, "blog-card-big")
+    cardBigContent = BlogCardSizeSort(BlogData, "blog-card-big"),
+    copyBlogDataToState
 }) => {
     return ( 
         <div className="blog-card-big-section">
@@ -15,7 +16,6 @@ const BlogCardBig = ({
                 cardBigContent.map(({
                     cardId,
                     cardTag,
-                    cardLink,
                     cardName,
                     cardImage,
                     cardContent,
@@ -27,7 +27,6 @@ const BlogCardBig = ({
                 })=>(
                     <BlogCardBigItem key={cardId}
                         cardTag = {cardTag}
-                        cardLink = {cardLink}
                         cardName = {cardName}
                         cardImage = {cardImage}
                         cardContent = {cardContent}
@@ -36,6 +35,8 @@ const BlogCardBig = ({
                         cardDate = {cardDate}
                         cardComments = {cardComments}
                         cardLikes = {cardLikes}
+                        cardId = {cardId}
+                        copyBlogDataToState = {copyBlogDataToState}
                     />
                 ))
             }

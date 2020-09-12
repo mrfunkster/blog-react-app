@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { linkNameParser } from '../../../../common/data/Functions'
 
 const SmallCardHorizontalItem = ({
     cardTag,
-    cardLink,
     cardName,
     cardImage,
     cardContent,
@@ -10,7 +11,9 @@ const SmallCardHorizontalItem = ({
     cardAuthorPhoto,
     cardDate,
     cardComments,
-    cardLikes
+    cardLikes,
+    cardId,
+    copyBlogDataToState
 }) => {
     return (
         <div className="blog-card-small-horizontal">
@@ -51,11 +54,11 @@ const SmallCardHorizontalItem = ({
                             </div>
                         </div>
                     </div>
-                    <div className="additional-btn">
+                    <Link to={`/cards/${linkNameParser(cardName)}`} className="additional-btn" onClick={()=>copyBlogDataToState(cardId)}>
                         <div className="div"></div>
                         <div className="div"></div>
                         <div className="div"></div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

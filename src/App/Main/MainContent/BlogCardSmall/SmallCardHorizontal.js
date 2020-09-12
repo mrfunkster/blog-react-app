@@ -5,7 +5,8 @@ import SmallCardHorizontalItem from './SmallCardHorizontalItem'
 import { BlogCardSizeSort } from '../../../../common/data/Functions'
 
 const SmallCardHorizontal = ({
-    smallCardHorizontalContent = BlogCardSizeSort(BlogData, "blog-card-small-hor")
+    smallCardHorizontalContent = BlogCardSizeSort(BlogData, "blog-card-small-hor"),
+    copyBlogDataToState
 }) => {
     return (
         <div className="blog-card-small-horizontal-section">
@@ -13,7 +14,6 @@ const SmallCardHorizontal = ({
                 smallCardHorizontalContent.map(({
                     cardId,
                     cardTag,
-                    cardLink,
                     cardName,
                     cardImage,
                     cardContent,
@@ -25,7 +25,6 @@ const SmallCardHorizontal = ({
                 })=>(
                     <SmallCardHorizontalItem key={cardId}
                         cardTag = {cardTag}
-                        cardLink = {cardLink}
                         cardName = {cardName}
                         cardImage = {cardImage}
                         cardContent = {cardContent}
@@ -34,6 +33,8 @@ const SmallCardHorizontal = ({
                         cardDate = {cardDate}
                         cardComments = {cardComments}
                         cardLikes = {cardLikes}
+                        copyBlogDataToState = {copyBlogDataToState}
+                        cardId = {cardId}
                     />
                 ))
             }
