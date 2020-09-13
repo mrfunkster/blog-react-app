@@ -12,7 +12,7 @@ const convertDate = (date) => {
     let hours = dateRes.getHours();
     let minutes = dateRes.getMinutes();
     let seconds = dateRes.getSeconds();
-    let resultString = `${month} ${day}, ${year} ${hours}:${minutes}:${seconds}`
+    let resultString = `${month} ${day}, ${year} ${hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`
     return resultString
 }
 

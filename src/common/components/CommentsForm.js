@@ -127,7 +127,7 @@ class CommentsForm extends Component {
         } = this.props
         return (
             <div className="comments-section">
-                <div className="comment-title">Comments ({this.commentsCount(cardComments)}):</div>
+                <div className="comment-title">Comments ({this.commentsCount(cardComments) < 10 ? "0" + this.commentsCount(cardComments) : this.commentsCount(cardComments)}):</div>
                 <form action="" className="comment-form" onSubmit={this.addItem}>
                     <input type="text" className="user-input" placeholder="Enter name here..."
                         value={this.state.commentsState.currentItem.user}
