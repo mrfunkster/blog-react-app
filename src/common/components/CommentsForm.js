@@ -4,6 +4,7 @@ import CommentsFormListItem from './CommentsFormListItem'
 
 class CommentsForm extends Component {
 
+
     state = {
         focusLineStyles1 : {
             transform: "scaleX(0)"
@@ -16,45 +17,31 @@ class CommentsForm extends Component {
             currentItem: {
                 user: '',
                 text: '',
-                key: '',
+                key: ''
             }
         }
     }
 
-    handleInputComment = (e) => {
-        e.preventDefault()
-        let userName = document.querySelector('.user-input').value
+    handleInput = (e) => {
+        let stateCopy = this.state.commentsState.currentItem;
+        stateCopy[e.target.name] = e.target.value
         this.setState({
             commentsState: {
                 items: [...this.state.commentsState.items],
-                currentItem: {
-                    user: userName,
-                    text: e.target.value,
-                    key: Date.now()
-                }
-            }
-        })
-    }
-
-    handleInputUser = (e) => {
-        this.setState({
-            commentsState: {
-                items: [...this.state.commentsState.items],
-                currentItem: {
-                    user: e.target.value,
-                    text: '',
-                    key: ''
-                }
+                currentItem: stateCopy
             }
         })
     }
 
     addItem = (e) => {
         e.preventDefault();
-        const newItem = this.state.commentsState.currentItem;
-        console.log(newItem)
-        if (newItem.text!=='' && newItem.user!=='') {
-            const newItems = [...this.state.commentsState.items, newItem]
+        let newItem = this.state.commentsState.currentItem;
+        let resItem = {
+            ...newItem,
+            key: Date.now()
+        } 
+        if (resItem.user!=='' && resItem.text!=='') {
+            let newItems = [...this.state.commentsState.items, resItem]
             this.setState({
                 commentsState: {
                     items: newItems,
@@ -65,10 +52,15 @@ class CommentsForm extends Component {
                     }
                 }
             })
+            this.onInputUnFocus1();
+            this.onInputUnFocus2();
+        } else if (resItem.user==='') {
+            alert("You must enter an username in a fields bellow!")
+        } else if (resItem.text==='') {
+            alert("You must enter a comment in a fields bellow!")
         } else {
             alert("You must enter an information in a fields below!")
         }
-        this.onInputUnFocus2();
     }
 
     commentsCount = (initCount) => {
@@ -132,7 +124,8 @@ class CommentsForm extends Component {
                 <form action="" className="comment-form" onSubmit={this.addItem}>
                     <input type="text" className="user-input" placeholder="Enter name here..."
                         value={this.state.commentsState.currentItem.user}
-                        onChange={this.handleInputUser}
+                        name="user"
+                        onChange={this.handleInput}
                         onFocus={this.onInputFocus1}
                         onBlur={this.onInputUnFocus1}
                     />
@@ -141,7 +134,8 @@ class CommentsForm extends Component {
                     ></div>
                     <input type="text" placeholder="Enter coment here..."
                         value={this.state.commentsState.currentItem.text}
-                        onChange={this.handleInputComment}
+                        name="text"
+                        onChange={this.handleInput}
                         onFocus={this.onInputFocus2}
                         onBlur={this.onInputUnFocus2}
                     />
