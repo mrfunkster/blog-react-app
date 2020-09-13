@@ -68,6 +68,7 @@ class CommentsForm extends Component {
         } else {
             alert("You must enter an information in a fields below!")
         }
+        this.onInputUnFocus2();
     }
 
     commentsCount = (initCount) => {

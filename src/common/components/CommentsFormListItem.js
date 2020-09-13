@@ -2,19 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 
 import './CommentsFormListItem.css'
-
-const convertDate = (date) => {
-    let dateRes = new Date(date)
-    let monthsArray = ["Jan", "Feb", "Mar",  "Apri",  "May",  "Jun",  "Jul",  "Aug",  "Sep",  "Oct",  "Nov",  "Dec"];
-    let year = dateRes.getFullYear();
-    let month = monthsArray[dateRes.getMonth()];
-    let day = dateRes.getDate();
-    let hours = dateRes.getHours();
-    let minutes = dateRes.getMinutes();
-    let seconds = dateRes.getSeconds();
-    let resultString = `${month} ${day}, ${year} ${hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`
-    return resultString
-}
+import { convertDate } from '../data/Functions'
 
 const CommentsFormListItem = ({
     items,
