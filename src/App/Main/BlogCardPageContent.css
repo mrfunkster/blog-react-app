@@ -1,0 +1,58 @@
+.card-comment-section {
+    display: flex;
+}
+.card-comment-section .blog-page-card-section {
+    width: 70%;
+}
+.card-comment-section .navigation-block {
+    width: 30%;
+    margin-bottom: unset;
+    box-shadow: unset;
+    border-left: 1px solid rgba(0, 0, 0, .12);
+    padding: 20px;
+}
+.comment-form {
+    padding-top: 20px;
+    
+    position: relative;
+}
+.comment-form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 50px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .6);
+    border-bottom: 1px solid #ff408091;
+}
+
+.comment-form .focus-line {
+    background-color: #ff4080;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transition: .5s ease-in-out;
+    transform-origin: center;
+}
+.comment-form button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transform-origin: center;
+    transition: .3s;
+}
+.comment-form button:hover {
+    transform: scale(1.05);
+    color: #ff4080;
+}

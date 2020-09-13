@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 
+import './BlogCardPageContent.css'
+import CommentsForm from '../../common/components/CommentsForm'
+
 class BlogCardPageContent extends Component {
+
+    state = {}
 
     scrollToMyRef = () => window.scrollTo(0, this.myRef.offsetTop)
     
     componentDidMount() {
-        this.scrollToMyRef()
+        this.scrollToMyRef();
     }
 
     render() {
@@ -36,48 +41,58 @@ class BlogCardPageContent extends Component {
                             <div className="blog-card-big-text">
                                     <h4 style={{textAlign: "center", fontSize: "26px"}}>{cardName}</h4>
                                 </div>
-                            <div className="blog-card-big-img">
-                                <img src={cardImage} alt=""/>
-                                <div className="card-tag">{cardTag}</div>
-                                <div className="author-social-activities">
-                                    <div className="author-activities comments">
-                                        <div className="icon">
-                                            <img src="/images/icons/forum_white.png" alt=""/>
-                                        </div>
-                                        <div className="text-info">{cardComments}</div>
-                                    </div>
-                                    <div className="author-activities likes">
-                                        <div className="icon">
-                                            <img src="/images/icons/favorite_border_white.png" alt=""/>
-                                        </div>
-                                        <div className="text-info">{cardLikes}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="blog-card-big-content">
-                                <div className="blog-card-big-text">
-                                    <p>{cardContent}</p>
-                                    <p>{cardContentFull}</p>
-                                </div>
-                                <div className="horizontal-line"></div>
-                                <div className="big-card-author-info">
-                                    <div className="author-info-horizontal">
-                                        <div className="author-photo">
-                                            <img src={cardAuthorPhoto} alt=""/>
-                                        </div>
-                                        <div className="author-name-date">
-                                            <div className="author-name dark">
-                                                <h4>{cardAuthorName}</h4>
+                            <div className="card-comment-section">
+                                <div className="blog-page-card-section">
+                                    <div className="blog-card-big-img">
+                                        <img src={cardImage} alt=""/>
+                                        <div className="card-tag">{cardTag}</div>
+                                        <div className="author-social-activities">
+                                            <div className="author-activities comments">
+                                                <div className="icon">
+                                                    <img src="/images/icons/forum_white.png" alt=""/>
+                                                </div>
+                                                <div className="text-info">{cardComments}</div>
                                             </div>
-                                            <div className="author-date dark">
-                                                <h4>{cardDate}</h4>
+                                            <div className="author-activities likes">
+                                                <div className="icon">
+                                                    <img src="/images/icons/favorite_border_white.png" alt=""/>
+                                                </div>
+                                                <div className="text-info">{cardLikes}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <Link to="/">Go Home</Link>
+                                    <div className="blog-card-big-content">
+                                        <div className="blog-card-big-text">
+                                            <p>{cardContent}</p>
+                                            <p>{cardContentFull}</p>
+                                        </div>
+                                        <div className="horizontal-line"></div>
+                                        <div className="big-card-author-info">
+                                            <div className="author-info-horizontal">
+                                                <div className="author-photo">
+                                                    <img src={cardAuthorPhoto} alt=""/>
+                                                </div>
+                                                <div className="author-name-date">
+                                                    <div className="author-name dark">
+                                                        <h4>{cardAuthorName}</h4>
+                                                    </div>
+                                                    <div className="author-date dark">
+                                                        <h4>{cardDate}</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <Link to="/">Go Home</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="navigation-block">
+                                    <CommentsForm 
+                                        cardComments = {cardComments}
+                                    />
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </motion.div>

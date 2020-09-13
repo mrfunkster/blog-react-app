@@ -1,0 +1,40 @@
+.comments-form-list-item {
+    padding: 10px 0;
+    border: 1px solid #ff4080a4;    
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.comments-form-list-item .comments-content {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .6);
+    user-select: none;
+}
+.comments-form-list-item .remove-btn {
+    position: absolute;
+    font-size: 20px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    color: #ff4080d0;
+    user-select: none;
+    transition: .3s;
+}
+.comments-form-list-item .remove-btn:hover {
+    color: #ff4080;
+}
+.comments-form-list-item .date{
+    padding-top: 10px;
+    font-size: 12px;
+    user-select: none;
+    color: rgba(0, 0, 0, .5);
+}
+.user-data {
+    padding-bottom: 10px;
+}
+.user-data span {
+    color: #ff4080;
+}
