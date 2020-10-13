@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import './MainSortField.css'
 
@@ -26,16 +27,24 @@ class MainSortFields extends Component {
                         </div>
                         <div className="tag-section">
                             <span className="active"
-                                onClick={this.markActive}
+                                onClick={
+                                    () => this.props.showPosts("allPosts")
+                                }
                             >#all posts</span>
                             <span
-                                onClick={this.markActive}
+                                onClick={
+                                    () => this.props.showPosts("inspiration")
+                                }
                             >#inspiration</span>
                             <span
-                                onClick={this.markActive}
+                                onClick={
+                                    () => this.props.showPosts("lifestyle")
+                                }
                             >#lifestyle</span>
                             <span
-                                onClick={this.markActive}
+                                onClick={
+                                    () => this.props.showPosts("likedPosts")
+                                }
                             >#Liked posts</span>
                         </div>
                     </div>
@@ -45,4 +54,14 @@ class MainSortFields extends Component {
     }
 }
 
-export default MainSortFields
+const mapDispatchToProps = (dispatch) => ({
+    showPosts: (tagName) => dispatch({
+        type: "SHOW_POSTS",
+        tagName: tagName
+    })
+})
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(MainSortFields)
