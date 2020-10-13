@@ -1,5 +1,34 @@
-@media(max-width: 767px) {
+.footer {
+    background-color: #191919;
+    padding: 15px;
+}
+.footer-row {
+    justify-content: space-between;
+    align-items: center;
+}
+.search input {
+    background-color: rgba(0, 0, 0, 0.38);
+    border: 1px solid white;
+    opacity: .38;
+    width: 270px;
+    height: 45px;
+    border-radius: 30px;
+    padding: 15px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
 
+.footer-row .nav-menu {
+    display: none;
+}
+@media(max-width: 767px) {
+    .footer-row {
+        justify-content: center;
+    }
+    .search {
+        margin-bottom: 15px;
+    }
 }
 /* Tablet */
 @media(min-width: 768px) {
@@ -11,5 +40,7 @@
 }
 /* Desktop */
 @media(min-width: 1200px) {
-
+    .footer-row .nav-menu {
+        display: flex;
+    }
 }

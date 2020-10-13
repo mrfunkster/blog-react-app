@@ -211,11 +211,30 @@
     .blog-cart-small-img {
         width: 100%;
     }
+    .subscribe-section-content {
+        padding: 15px;
+        flex-direction: column;
+    }
+    .subscribe-section-content h4 {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+    .subscribe-section-content input {
+        margin-bottom: 15px;
+    }
 }
 
 @media(max-width: 991px) {
     .blog-card-small-vertical {
         width: 100%;
+    }
+    .subscribe-section-content h4 {
+        font-size: 24px;
+        width: 250px;
+    }
+    .subscribe-section {
+        justify-content: space-between;
     }
 }
 /* Tablet */

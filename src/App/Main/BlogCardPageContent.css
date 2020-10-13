@@ -56,3 +56,15 @@
     transform: scale(1.05);
     color: #ff4080;
 }
+
+@media(max-width: 767px) {
+    .card-comment-section {
+        flex-direction: column;
+    }
+    .blog-page-card-section, .navigation-block {
+        width: 100% !important;
+    }
+    .blog-page-card-section {
+        border-bottom: 1px solid #00000012;
+    }
+}
