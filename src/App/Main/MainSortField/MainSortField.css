@@ -1,0 +1,26 @@
+.sort-container {
+    height: inherit;
+}
+.sort-row {
+    align-items: center;
+    height: inherit;
+}
+.tag-section {
+    margin-left: 15px;
+}
+.tag-section span{
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+.tag-section span:hover {
+    color: #ff4081;
+}
+.tag-section span.active {
+    border: 1px solid #ff4081;
+    color: #ff4081;
+    border-radius: 20px;
+}

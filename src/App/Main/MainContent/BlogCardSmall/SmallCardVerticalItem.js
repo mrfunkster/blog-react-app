@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { linkNameParser } from '../../../../common/data/Functions'
 
@@ -14,7 +15,10 @@ const SmallCardVerticalItem = ({
     cardComments,
     cardLikes,
     copyBlogDataToState,
-    cardId
+    cardId,
+    isLiked,
+    addLike,
+    removeLike
 }) => {
     return (
         <div className="blog-card-small-vertical">
@@ -28,16 +32,18 @@ const SmallCardVerticalItem = ({
                         </div>
                         <div className="text-info">{cardComments}</div>
                     </div>
-                    <div className="author-activities likes">
+                    <div className="author-activities likes"
+                        onClick={() => isLiked ? removeLike(cardId) : addLike(cardId)}
+                    >
                         <div className="icon">
                             <img src="/images/icons/favorite_border_white.png" alt=""/>
                         </div>
-                        <div className="text-info">{cardLikes}</div>
+                        <div className="text-info">{isLiked ? +cardLikes + 1 : cardLikes}</div>
                     </div>
                 </div>
             </div>
             <div className="blog-cart-small-vertical-content">
-                <div className="blog-cart-small-horizontal-text vertical-card">
+                <div className="blog-cart-small-horizontal-text vertical-card card-mobile">
                     <h4>{cardName}</h4>
                     <p>{cardContent}</p>
                 </div>
@@ -66,4 +72,22 @@ const SmallCardVerticalItem = ({
     )
 }
 
-export default SmallCardVerticalItem
+const mapStateToProps = (state, props) => ({
+    isLiked: state.postsLikeState[props.cardId]
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    addLike: (cardId) => dispatch({
+        type: "LIKE",
+        id: cardId
+    }),
+    removeLike: (cardId) => dispatch({
+        type: "DISLIKE",
+        id: cardId
+    })
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SmallCardVerticalItem)

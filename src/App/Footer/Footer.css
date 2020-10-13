@@ -19,8 +19,26 @@
     font-size: 16px;
 }
 
-.footer-row .nav-menu {
+.footer-nav-menu {
     display: none;
+}
+.footer-nav-menu > ul {
+    display: flex;
+}
+.footer-nav-menu > ul > li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: .7px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: .3s;
+}
+.footer-nav-menu > ul > li > a:hover {
+    color: #ff4081;
+}
+.footer-nav-menu > ul > li {
+    padding: 25px 10px;
 }
 @media(max-width: 767px) {
     .footer-row {
@@ -40,7 +58,7 @@
 }
 /* Desktop */
 @media(min-width: 1200px) {
-    .footer-row .nav-menu {
+    .footer-nav-menu {
         display: flex;
     }
 }

@@ -4,6 +4,7 @@ import {motion} from 'framer-motion'
 
 import './BlogCardPageContent.css'
 import CommentsForm from '../../common/components/CommentsForm'
+import { connect } from 'react-redux'
 
 class BlogCardPageContent extends Component {
 
@@ -17,6 +18,7 @@ class BlogCardPageContent extends Component {
 
     render() {
         const {
+            cardId,
             cardImage,
             cardName,
             cardTag,
@@ -26,7 +28,10 @@ class BlogCardPageContent extends Component {
             cardAuthorPhoto,
             cardContent,
             cardDate,
-            cardContentFull
+            cardContentFull,
+            isLiked,
+            addLike,
+            removeLike
         } = this.props
         return (
             <motion.div className="main"
@@ -53,11 +58,13 @@ class BlogCardPageContent extends Component {
                                                 </div>
                                                 <div className="text-info">{cardComments}</div>
                                             </div>
-                                            <div className="author-activities likes">
+                                            <div className="author-activities likes"
+                                                onClick={() => isLiked ? removeLike(cardId) : addLike(cardId)}
+                                            >
                                                 <div className="icon">
                                                     <img src="/images/icons/favorite_border_white.png" alt=""/>
                                                 </div>
-                                                <div className="text-info">{cardLikes}</div>
+                                                <div className="text-info">{isLiked ? +cardLikes + 1 : cardLikes}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -100,4 +107,22 @@ class BlogCardPageContent extends Component {
     }
 }
 
-export default BlogCardPageContent
+const mapStateToProps = (state, props) => ({
+    isLiked: state.postsLikeState[props.cardId]
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    addLike: (cardId) => dispatch({
+        type: "LIKE",
+        id: cardId
+    }),
+    removeLike: (cardId) => dispatch({
+        type: "DISLIKE",
+        id: cardId
+    })
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BlogCardPageContent)

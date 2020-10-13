@@ -9,7 +9,7 @@ const Footer = () => {
         <section className="footer">
             <div className="container">
                 <div className="row footer-row">
-                    <div className="nav-menu">
+                    <div className="footer-nav-menu">
                         <NavMenu />
                     </div>
                     <div className="search">

@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { linkNameParser } from '../../../../common/data/Functions'
 
@@ -14,6 +15,9 @@ const BlogCardBigItem = ({
     cardLikes,
     cardId,
     copyBlogDataToState,
+    isLiked,
+    removeLike,
+    addLike
 }) => {
     return (
         <div className="blog-card-big">
@@ -27,11 +31,13 @@ const BlogCardBigItem = ({
                         </div>
                         <div className="text-info">{cardComments}</div>
                     </div>
-                    <div className="author-activities likes">
+                    <div className="author-activities likes"
+                        onClick={() => isLiked ? removeLike(cardId) : addLike(cardId)}
+                    >
                         <div className="icon">
                             <img src="/images/icons/favorite_border_white.png" alt=""/>
                         </div>
-                        <div className="text-info">{cardLikes}</div>
+                        <div className="text-info">{isLiked ? +cardLikes + 1 : cardLikes}</div>
                     </div>
                 </div>
             </div>
@@ -66,4 +72,22 @@ const BlogCardBigItem = ({
     )
 }
 
-export default BlogCardBigItem
+const mapStateToProps = (state, props) => ({
+    isLiked: state.postsLikeState[props.cardId]
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    addLike: (cardId) => dispatch({
+        type: "LIKE",
+        id: cardId
+    }),
+    removeLike: (cardId) => dispatch({
+        type: "DISLIKE",
+        id: cardId
+    })
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BlogCardBigItem)

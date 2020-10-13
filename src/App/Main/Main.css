@@ -10,6 +10,10 @@
     background-color: #ffffff;
 }
 
+.author-activities.likes {
+    cursor: pointer;
+}
+
 /* Blog Card Small */
 .blog-card-small-horizontal {
     display: flex;
@@ -222,6 +226,9 @@
     }
     .subscribe-section-content input {
         margin-bottom: 15px;
+    }
+    .card-mobile p {
+        display: none;
     }
 }
 
