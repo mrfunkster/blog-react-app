@@ -57,6 +57,7 @@ class Main extends Component {
                                 cardContent = {this.state.BlogCardItemContent.cardContent}
                                 cardDate = {this.state.BlogCardItemContent.cardDate}
                                 cardContentFull = {this.state.BlogCardItemContent.cardContentFull}
+                                cardId = {this.state.BlogCardItemContent.cardId}
                             />
                         )} />
                     </Switch>
