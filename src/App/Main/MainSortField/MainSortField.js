@@ -65,7 +65,7 @@ class MainSortFields extends Component {
                                 }
                             >#Liked posts
                                 {
-                                    this.postsCount(this.props.likedPosts) != 0 ?
+                                    this.postsCount(this.props.likedPosts) !== 0 ?
                                     ` (${this.postsCount(this.props.likedPosts)})`
                                     : ""
                                 }</span>
