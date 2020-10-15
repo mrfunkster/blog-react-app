@@ -21,6 +21,7 @@
 }
 .tag-section span.active {
     border: 1px solid #ff4081;
-    color: #ff4081;
+    color: white;
+    background-color: #ff4081;
     border-radius: 20px;
 }
