@@ -28,22 +28,34 @@ class MainSortFields extends Component {
                         <div className="tag-section">
                             <span className="active"
                                 onClick={
-                                    () => this.props.showPosts("allPosts")
+                                    (e) => {
+                                        this.markActive(e)
+                                        this.props.showPosts("allPosts")
+                                    }
                                 }
                             >#all posts</span>
                             <span
                                 onClick={
-                                    () => this.props.showPosts("inspiration")
+                                    (e) => {
+                                        this.markActive(e)
+                                        this.props.showPosts("inspiration")
+                                    }
                                 }
                             >#inspiration</span>
                             <span
                                 onClick={
-                                    () => this.props.showPosts("lifestyle")
+                                    (e) => {
+                                        this.markActive(e)
+                                        this.props.showPosts("lifestyle")
+                                    }
                                 }
                             >#lifestyle</span>
                             <span
                                 onClick={
-                                    () => this.props.showPosts("likedPosts")
+                                    (e) => {
+                                        this.markActive(e)
+                                        this.props.showPosts("likedPosts")
+                                    }
                                 }
                             >#Liked posts</span>
                         </div>

@@ -19,3 +19,10 @@ export const convertDate = (date) => {
     let resultString = `${month} ${day}, ${year} ${hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
     return resultString
 }
+
+export const getProductsMap = (array) => {
+    return array.reduce((accObj, card)=>({
+        ...accObj,
+        [card.cardId]: card
+    }), {})
+}

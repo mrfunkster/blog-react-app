@@ -1,4 +1,4 @@
-const sortReducer = (state = {}, action) => {
+const sortReducer = (state = {show: "allPosts"}, action) => {
     switch (action.type) {
         case "SHOW_POSTS":
             return {
