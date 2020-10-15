@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { keys } from 'lodash'
 
 import './MainSortField.css'
 
@@ -15,6 +16,11 @@ class MainSortFields extends Component {
             tag.classList.remove('active')
         }
         e.target.classList.add('active')
+    }
+
+    postsCount = (likedPosts) => {
+        let postsCount = keys(likedPosts).length
+        return postsCount
     }
 
     render() {
@@ -57,7 +63,12 @@ class MainSortFields extends Component {
                                         this.props.showPosts("likedPosts")
                                     }
                                 }
-                            >#Liked posts</span>
+                            >#Liked posts
+                                {
+                                    this.postsCount(this.props.likedPosts) != 0 ?
+                                    ` (${this.postsCount(this.props.likedPosts)})`
+                                    : ""
+                                }</span>
                         </div>
                     </div>
                 </div>
@@ -73,7 +84,11 @@ const mapDispatchToProps = (dispatch) => ({
     })
 })
 
+const mapStateToProps = (state) => ({
+    likedPosts: state.postsLikeState
+})
+
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(MainSortFields)

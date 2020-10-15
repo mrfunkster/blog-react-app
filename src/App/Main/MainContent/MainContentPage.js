@@ -8,6 +8,7 @@ import BlogCardSmallVertical from './BlogCardSmall/SmallCardVertical'
 import SmallCardHorizontalItem from './BlogCardSmall/SmallCardHorizontalItem'
 import BlogData from '../../../common/data/BlogData'
 import { getProductsMap } from '../../../common/data/Functions'
+import NavigationBlock from './NavigationBlock/NavigationBlock'
 
 const showSortedPosts = (tag, copyBlogDataToState) => {
     let resultArray = BlogData.filter(dataObj => dataObj.cardTag === tag)
@@ -67,7 +68,7 @@ const showLikedPosts = (likedPosts, copyBlogDataToState) => {
             ))
         )
     } else {
-        return <p style={{paddingBottom: "30px"}}>"NO POSTS TO SHOW</p>
+        return <p style={{paddingBottom: "30px", textAlign: "center"}}>There is no liked posts to show yet</p>
     }
 }
 
@@ -80,7 +81,7 @@ const MainContentPage = ({
         <div className="row">
             <div className="col-sm-12 col-73 main-blog">
                 {
-                    show === "allPosts" ? 
+                    show === "allPosts" ?
                     <div className="main-blog-content">
                         <BlogCardBig 
                             copyBlogDataToState = {copyBlogDataToState}
@@ -113,7 +114,9 @@ const MainContentPage = ({
                     : "EMPTY"
                 }
             </div>
-            <div className="col-sm-12 col-27 navigation-block"></div>
+            <div className="col-sm-12 col-27 navigation-block">
+                <NavigationBlock />
+            </div>
         </div>
     )
 }

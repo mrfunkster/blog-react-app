@@ -208,6 +208,27 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
 }
 
+/* transitions */
+
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+.fade-exit-done {
+    opacity: 0;
+}
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity .3s linear;
+}
+
+
 @media(max-width: 767px) {
     .blog-card-small-horizontal {
         flex-wrap: wrap;

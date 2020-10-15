@@ -1,0 +1,20 @@
+.navigation-block-content {
+    padding: 15px 0 15px 0;
+}
+
+.search-block {
+    margin: 15px 0 15px 0;
+}
+.search-block input {
+    width: 100%;
+    outline: none;
+    height: 40px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #ff4081;
+    color: #ff4081;
+}
+
+.search-block input::placeholder {
+    color: #ff4081;
+}
