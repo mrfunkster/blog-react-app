@@ -7,6 +7,8 @@
 }
 .tag-section {
     margin-left: 15px;
+    display: flex;
+    align-items: center;
 }
 .tag-section span{
     padding: 10px;
@@ -15,6 +17,10 @@
     transition: .3s;
     border: 1px solid transparent;
     border-radius: 20px;
+    display: block;
+    margin: 0 2px;
+    text-align: center;
+    flex: none;
 }
 .tag-section span:hover {
     color: #ff4081;
@@ -24,4 +30,20 @@
     color: white;
     background-color: #ff4081;
     border-radius: 20px;
+}
+
+@media(max-width: 767px) {
+    .main-sort-field {
+
+    }
+    .tag-section {
+        overflow-x: scroll;
+        margin-right: 15px;
+    }
+    .tag-section::-webkit-scrollbar {
+        display: none;
+    }
+    .sort-title {
+        display: none;
+    }
 }
