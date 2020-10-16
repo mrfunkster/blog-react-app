@@ -33,9 +33,6 @@
 }
 
 @media(max-width: 767px) {
-    .main-sort-field {
-
-    }
     .tag-section {
         overflow-x: scroll;
         margin-right: 15px;
