@@ -18,12 +18,22 @@ class MainSortFields extends Component {
         e.target.classList.add('active')
     }
 
+    markInactiveAll = () => {
+        let tags = document.querySelectorAll('.tag-section span')
+        for (let tag of tags) {
+            tag.classList.remove('active')
+        }
+    }
+
     postsCount = (likedPosts) => {
         let postsCount = keys(likedPosts).length
         return postsCount
     }
 
     render() {
+        if (this.props.show === "search") {
+            this.markInactiveAll()
+        }
         return (
             <section className="main-sort-field">
                 <div className="container sort-container">
@@ -85,7 +95,8 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = (state) => ({
-    likedPosts: state.postsLikeState
+    likedPosts: state.postsLikeState,
+    show: state.postsToShow.show
 })
 
 export default connect(

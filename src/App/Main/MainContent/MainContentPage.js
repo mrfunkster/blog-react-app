@@ -72,10 +72,57 @@ const showLikedPosts = (likedPosts, copyBlogDataToState) => {
     }
 }
 
+const showSearchedPosts = (searchRequest, copyBlogDataToState) => {
+    searchRequest = searchRequest.toString()
+    let resultArray = BlogData.filter(dataObj => dataObj.cardName.toLowerCase().includes(searchRequest))
+    if (resultArray.length && searchRequest !== "") {
+        return (
+            <>
+                <h1 style={{textAlign: "center", fontSize: "24px", paddingBottom: "30px"}}>Search Result ({resultArray.length}):</h1>
+                {
+                    resultArray.map(({
+                        cardId,
+                        cardTag,
+                        cardName,
+                        cardImage,
+                        cardContent,
+                        cardAuthorName,
+                        cardAuthorPhoto,
+                        cardDate,
+                        cardComments,
+                        cardLikes
+                    })=>(
+                        <SmallCardHorizontalItem key={cardId}
+                            cardTag = {cardTag}
+                            cardName = {cardName}
+                            cardImage = {cardImage}
+                            cardContent = {cardContent}
+                            cardAuthorName = {cardAuthorName}
+                            cardAuthorPhoto = {cardAuthorPhoto}
+                            cardDate = {cardDate}
+                            cardComments = {cardComments}
+                            cardLikes = {cardLikes}
+                            copyBlogDataToState = {copyBlogDataToState}
+                            cardId = {cardId}
+                        />
+                    ))
+                }
+            </>
+        )
+    } else {
+    return <p style={{paddingBottom: "30px", textAlign: "center"}}
+            >There is no search result to {
+                searchRequest === "" ? "empty" : `"${searchRequest}"`
+            } request.
+            </p>
+    }
+}
+
 const MainContentPage = ({
     copyBlogDataToState,
     show,
-    likedPosts
+    likedPosts,
+    searchRequest
 }) => {
     return (
         <div className="row">
@@ -111,6 +158,12 @@ const MainContentPage = ({
                                 showLikedPosts(likedPosts, copyBlogDataToState)
                             }
                         </div>
+                    : show === "search" ? 
+                        <div className="main-blog-content">
+                            {
+                                showSearchedPosts(searchRequest, copyBlogDataToState)
+                            }
+                        </div>
                     : "EMPTY"
                 }
             </div>
@@ -123,7 +176,8 @@ const MainContentPage = ({
 
 const mapStateToProps = (state) => ({
     show: state.postsToShow.show,
-    likedPosts: state.postsLikeState
+    likedPosts: state.postsLikeState, 
+    searchRequest: state.searchState.toSearch
 })
 
 export default connect(
