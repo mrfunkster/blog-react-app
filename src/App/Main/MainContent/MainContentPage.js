@@ -73,12 +73,13 @@ const showLikedPosts = (likedPosts, copyBlogDataToState) => {
 }
 
 const showSearchedPosts = (searchRequest, copyBlogDataToState) => {
-    searchRequest = searchRequest.toString()
-    let resultArray = BlogData.filter(dataObj => dataObj.cardName.toLowerCase().includes(searchRequest))
+    searchRequest = searchRequest.toString().trim();
+    let finalSearchRequest = searchRequest.toLowerCase();
+    let resultArray = BlogData.filter(dataObj => dataObj.cardName.toLowerCase().includes(finalSearchRequest))
     if (resultArray.length && searchRequest !== "") {
         return (
             <>
-                <h1 style={{textAlign: "center", fontSize: "24px", paddingBottom: "30px"}}>Search Result ({resultArray.length}):</h1>
+                <h1 style={{textAlign: "center", fontSize: "24px", paddingBottom: "30px"}}>Search Result for "{searchRequest}" ({resultArray.length}):</h1>
                 {
                     resultArray.map(({
                         cardId,
