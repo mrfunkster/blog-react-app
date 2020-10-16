@@ -63,7 +63,7 @@ const showLikedPosts = (likedPosts, copyBlogDataToState) => {
                     cardComments = {likedPostsObj[cardId].cardComments}
                     cardLikes = {likedPostsObj[cardId].cardLikes}
                     copyBlogDataToState = {copyBlogDataToState}
-                    cardId = {cardId}
+                    cardId = {likedPostsObj[cardId].cardId}
                 />
             ))
         )
