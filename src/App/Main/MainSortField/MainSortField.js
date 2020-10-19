@@ -42,37 +42,17 @@ class MainSortFields extends Component {
                             <p>Sort by:</p>
                         </div>
                         <div className="tag-section">
-                            <span className="active"
-                                onClick={
-                                    (e) => {
-                                        this.markActive(e)
-                                        this.props.showPosts("allPosts")
-                                    }
-                                }
+                            <span className={this.props.show === "allPosts" ? "active" : ""}
+                                onClick={() => this.props.showPosts("allPosts")}
                             >#all posts</span>
-                            <span
-                                onClick={
-                                    (e) => {
-                                        this.markActive(e)
-                                        this.props.showPosts("inspiration")
-                                    }
-                                }
+                            <span className={this.props.show === "inspiration" ? "active" : ""}
+                                onClick={() => this.props.showPosts("inspiration")}
                             >#inspiration</span>
-                            <span
-                                onClick={
-                                    (e) => {
-                                        this.markActive(e)
-                                        this.props.showPosts("lifestyle")
-                                    }
-                                }
+                            <span className={this.props.show === "lifestyle" ? "active" : ""}
+                                onClick={() => this.props.showPosts("lifestyle")}
                             >#lifestyle</span>
-                            <span
-                                onClick={
-                                    (e) => {
-                                        this.markActive(e)
-                                        this.props.showPosts("likedPosts")
-                                    }
-                                }
+                            <span className={this.props.show === "likedPosts" ? "active" : ""}
+                                onClick={() => this.props.showPosts("likedPosts")}
                             >#Liked posts
                                 {
                                     this.postsCount(this.props.likedPosts) !== 0 ?

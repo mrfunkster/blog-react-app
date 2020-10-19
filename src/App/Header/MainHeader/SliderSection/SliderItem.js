@@ -9,12 +9,21 @@ const SliderItem = ({
     authorPhoto,
     authorDate,
     authorComments,
-    authorLikes
+    authorLikes,
+    onLoad = () => {
+        setTimeout(()=>{
+            let loader = document.querySelector("#page-loader")
+            loader.classList.add("hide")
+            document.body.classList.remove("lock")
+        }, 1000)
+    }
 }) => {
     return (
         <div className="slide">
             <div className="slide-background">
-                <img src={slideBackground} alt=""/>
+                <img src={slideBackground} alt=""
+                    onLoad={onLoad}
+                />
             </div>
             <div className="slide-content">
                 <h2>{tag}</h2>

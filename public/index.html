@@ -10,9 +10,17 @@
       content="This is a Blog React App"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="Preloader.css">
     <title>Blog React App</title>
   </head>
-  <body>
+  <body class="lock">
+    <div id="page-loader" class="page-loader">
+      <div class="loader-overlay"></div>
+      <div class="loader-svg">
+          <img src="images/preloader.svg" alt="loader"/>
+          <p>Loading</p>
+      </div>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

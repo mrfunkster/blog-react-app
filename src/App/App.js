@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import '../common/style/reset.css'
 import '../common/style/grid.css'
@@ -12,6 +13,10 @@ class App extends Component {
 
     state = {
         burgerButtonPressed: false
+    }
+
+    componentDidMount() {
+
     }
 
     burgerButtonToggle = () => {
@@ -42,4 +47,13 @@ class App extends Component {
     }
 }
 
-export default App
+const mapDispatchToProps = (dispatch) => ({
+    pageLoaded: () => dispatch({
+        type: "PAGE_LOADED"
+    })
+})
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(App)
