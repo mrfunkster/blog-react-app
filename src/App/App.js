@@ -16,7 +16,39 @@ class App extends Component {
     }
 
     componentDidMount() {
+        this.pageLoader()
+    }
 
+    pageLoader = () => {
+        let images = document.images;
+        let imagesTotalCount = images.length;
+        let imagesLoadedCount = 0;
+        let percentDisplay = document.getElementById('load-progress');
+
+        const hideLoader = () => {
+            let loader = document.querySelector("#page-loader")
+            loader.classList.add("hide")
+            setTimeout(() => {
+                document.body.classList.remove("lock")
+            }, 500)
+        }
+
+        const imageLoaded = () => {
+            imagesLoadedCount++;
+            percentDisplay.innerHTML = ' ' + (((100 / imagesTotalCount) * imagesLoadedCount) << 0) + '%';
+            if (imagesLoadedCount >= imagesTotalCount) {
+                setTimeout(() => {
+                    hideLoader();
+                }, 500)
+            }
+        }
+
+        for (let i = 0; i < imagesTotalCount; i++) {
+            let imageClone = new Image();
+            imageClone.onload = imageLoaded;
+            imageClone.onerror = imageLoaded;
+            imageClone.src = images[i].src
+        }
     }
 
     burgerButtonToggle = () => {

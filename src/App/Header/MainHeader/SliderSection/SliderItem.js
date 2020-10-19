@@ -12,9 +12,7 @@ const SliderItem = ({
     authorLikes,
     onLoad = () => {
         setTimeout(()=>{
-            let loader = document.querySelector("#page-loader")
-            loader.classList.add("hide")
-            document.body.classList.remove("lock")
+
         }, 1000)
     }
 }) => {
