@@ -1,5 +1,4 @@
 import React from 'react'
-import MainSortField from '../../MainSortField/MainSortField'
 
 import './NavigationBlock.css'
 
