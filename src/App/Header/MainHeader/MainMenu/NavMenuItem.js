@@ -27,7 +27,7 @@ class NavMenuItem extends Component {
                 <Link onClick={() => {
                     markActive(name)
                     burgerButtonToggle()
-                }} to={linkNameParser(name)==="home" ? "/" : `/${linkNameParser(name)}`}>{name}</Link>
+                }} to={linkNameParser(name)==="home" ? "/" : `/pages/${linkNameParser(name)}`}>{name}</Link>
             </li>
         )
     }

@@ -13,7 +13,14 @@ class BlogCardPageContent extends Component {
         isImageLoaded: false
     }
 
-    scrollToMyRef = () => window.scrollTo(0, this.myRef.offsetTop)
+    scrollToMyRef = () => {
+        let pageWidth = document.documentElement.clientWidth;
+        if (pageWidth > 768) {
+            window.scrollTo(0, this.myRef.offsetTop)
+        } else {
+            window.scrollTo(0, 0)
+        }
+    }
     
     componentDidMount() {
         this.scrollToMyRef();

@@ -61,7 +61,7 @@ class Main extends Component {
                                 cardId = {this.state.BlogCardItemContent.cardId}
                             />
                         )} />
-                        <Route path="/:menuPages" component={UnaviablePage} />
+                        <Route path="/pages/:menuPages" exact component={UnaviablePage} />
                     </Switch>
                 </AnimatePresence>
             </main>
