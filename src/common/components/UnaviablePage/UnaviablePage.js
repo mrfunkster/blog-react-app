@@ -26,6 +26,8 @@ class UnaviablePage extends Component {
     }
 
     render() {
+        const {match} = this.props
+        console.log(match)
         return (
             <div className="main" style={{minHeight: this.pageHeight()}}
                 ref={(ref) => this.myRef=ref}
@@ -35,6 +37,7 @@ class UnaviablePage extends Component {
                         <div className="row">
                             <div className="col unaviable">
                                 <div>
+                                <h1 style={{fontSize: "24px", textAlign: "center", textTransform: "uppercase"}}>{match.params.menuPages}</h1>
                                     <img src="/images/preloader.svg" alt=""/>
                                     <h1 style={{fontSize: "24px", textAlign: "center"}}>This page are temporary unaviable!</h1>
                                 </div>
