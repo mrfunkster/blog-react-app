@@ -2,7 +2,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .unaviable img {
     object-fit: cover;
+}
+.unaviable div {
+    padding-bottom: 30px;
 }
