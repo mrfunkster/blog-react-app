@@ -205,6 +205,9 @@
         .nav-menu.active {
             left: 0;
         }
+        .nav-menu.active .nav-list {
+            overflow-y: scroll;
+        }
         .nav-menu > ul > li.active {
             border-bottom: none;
         }
@@ -214,7 +217,6 @@
             position: absolute;
             top: 100%;
             background-color: #3f51b5;
-            overflow: auto;
         }
         .nav-menu > ul {
             display: block;

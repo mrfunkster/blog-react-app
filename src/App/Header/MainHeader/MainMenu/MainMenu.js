@@ -25,7 +25,9 @@ class MainMenu extends Component {
                             <div></div>
                         </div>
                         <nav className={burgerButtonPressed ? "nav-menu active" : "nav-menu"}>
-                            <NavMenu />
+                            <NavMenu 
+                                burgerButtonToggle = {burgerButtonToggle}
+                            />
                         </nav>
                         <div className="col main-menu-btns">
                             <div className="main-menu-btn search">

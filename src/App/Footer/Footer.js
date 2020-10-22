@@ -1,5 +1,4 @@
 import React from 'react'
-import NavMenu from '../Header/MainHeader/MainMenu/NavMenu'
 import SignLanguage from '../Header/TopMenu/SignLanguage/SignLanguage'
 
 import './Footer.css'
@@ -9,11 +8,10 @@ const Footer = () => {
         <section className="footer">
             <div className="container">
                 <div className="row footer-row">
-                    <div className="footer-nav-menu">
-                        <NavMenu />
-                    </div>
+                    <div className="footer-nav-menu"></div>
                     <div className="search">
-                        <input type="search" placeholder="Search"/>
+                        {/* <input type="search" placeholder="Search"/> */}
+                        <h2 className="top-menu-text" style={{textAlign: "center"}}>Copyright Reserved. Dmytro Luhovskiy React Project.</h2>
                     </div>
                     <div className="sign-language">
                         <SignLanguage />

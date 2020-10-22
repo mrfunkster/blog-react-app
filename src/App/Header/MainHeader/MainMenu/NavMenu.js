@@ -40,14 +40,16 @@ class NavMenu extends Component {
     
 
     render() {
+        const {burgerButtonToggle} = this.props
         return (
-            <ul> 
+            <ul className="nav-list"> 
                 {
                     NavMenuData.map(({name})=>(
                         <NavMenuItem key = {name} 
                             name = {name}
                             isActive = {this.state.isActive}
                             markActive = {this.markActive}
+                            burgerButtonToggle = {burgerButtonToggle}
                         />
                     ))
                 }

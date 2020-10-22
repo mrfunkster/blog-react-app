@@ -19,11 +19,15 @@ class NavMenuItem extends Component {
         const {
             name,
             isActive,
-            markActive
+            markActive,
+            burgerButtonToggle
         } = this.props
         return (
             <li className={isActive[name] ? "active" : ""}>
-                <Link onClick={()=>markActive(name)} to={linkNameParser(name)==="home" ? "/" : `/${linkNameParser(name)}`}>{name}</Link>
+                <Link onClick={() => {
+                    markActive(name)
+                    burgerButtonToggle()
+                }} to={linkNameParser(name)==="home" ? "/" : `/${linkNameParser(name)}`}>{name}</Link>
             </li>
         )
     }

@@ -7,6 +7,7 @@
 }
 .blog-card-big-img {
     position: relative;
+    min-height: 160px;
 }
 .card-tag {
     text-transform: uppercase;
@@ -103,4 +104,17 @@
     width: 5px;
     height: 5px;
     background-color: #212121;
+}
+
+/* Tablet */
+@media(min-width: 768px) {
+    .blog-card-big-img {
+        min-height: 255px;
+    }
+}
+/* Laptop */
+@media(min-width: 992px) {
+    .blog-card-big-img {
+        min-height: 350px;
+    }
 }

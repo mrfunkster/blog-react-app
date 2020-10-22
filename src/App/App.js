@@ -12,7 +12,8 @@ import Footer from './Footer/Footer'
 class App extends Component {
 
     state = {
-        burgerButtonPressed: false
+        burgerButtonPressed: false,
+        overlayVisible: false
     }
 
     componentDidMount() {
@@ -53,14 +54,16 @@ class App extends Component {
 
     burgerButtonToggle = () => {
         let body = document.body;
-        console.log(body)
-        this.setState({
-            burgerButtonPressed: !this.state.burgerButtonPressed
-        })
-        if (!this.state.burgerButtonPressed) {
-            body.classList.add('lock')
-        } else {
-            body.classList.remove('lock')
+        let screenWidth = document.documentElement.clientWidth
+        if (screenWidth <= 768) {
+            this.setState({
+                burgerButtonPressed: !this.state.burgerButtonPressed,
+            })
+            if (!this.state.burgerButtonPressed) {
+                body.classList.add('lock')
+            } else {
+                body.classList.remove('lock')
+            }
         }
     }
 

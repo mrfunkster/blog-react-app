@@ -7,6 +7,7 @@ import './Main.css'
 import MainPageContent from './MainPageContent'
 import BlogCardPageContent from './BlogCardPageContent'
 import BlogData from '../../common/data/BlogData'
+import UnaviablePage from '../../common/components/UnaviablePage/UnaviablePage'
 
 class Main extends Component {
 
@@ -60,6 +61,7 @@ class Main extends Component {
                                 cardId = {this.state.BlogCardItemContent.cardId}
                             />
                         )} />
+                        <Route path="/:menuPages" component={UnaviablePage} />
                     </Switch>
                 </AnimatePresence>
             </main>

@@ -10,18 +10,11 @@ const SliderItem = ({
     authorDate,
     authorComments,
     authorLikes,
-    onLoad = () => {
-        setTimeout(()=>{
-
-        }, 1000)
-    }
 }) => {
     return (
         <div className="slide">
             <div className="slide-background">
-                <img src={slideBackground} alt=""
-                    onLoad={onLoad}
-                />
+                <img src={slideBackground} alt="" />
             </div>
             <div className="slide-content">
                 <h2>{tag}</h2>

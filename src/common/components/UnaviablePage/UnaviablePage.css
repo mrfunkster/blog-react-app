@@ -1,0 +1,8 @@
+.unaviable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.unaviable img {
+    object-fit: cover;
+}

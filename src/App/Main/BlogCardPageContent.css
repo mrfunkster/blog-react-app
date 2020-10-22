@@ -68,3 +68,12 @@
         border-bottom: 1px solid #00000012;
     }
 }
+
+/* Tablet */
+@media(min-width: 768px) {
+
+}
+/* Laptop */
+@media(min-width: 992px) {
+
+}

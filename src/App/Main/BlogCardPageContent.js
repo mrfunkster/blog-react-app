@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
-import {motion} from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { connect } from 'react-redux'
 
 import './BlogCardPageContent.css'
 import CommentsForm from '../../common/components/CommentsForm'
-import { connect } from 'react-redux'
+import Loader from '../../common/components/Loader/Loader'
 
 class BlogCardPageContent extends Component {
 
-    state = {}
+    state = {
+        isImageLoaded: false
+    }
 
     scrollToMyRef = () => window.scrollTo(0, this.myRef.offsetTop)
     
     componentDidMount() {
         this.scrollToMyRef();
+    }
+
+    imageLoaded = () => {
+        this.setState({
+            isImageLoaded: true
+        })
     }
 
     render() {
@@ -49,7 +58,10 @@ class BlogCardPageContent extends Component {
                             <div className="card-comment-section">
                                 <div className="blog-page-card-section">
                                     <div className="blog-card-big-img">
-                                        <img src={cardImage} alt=""/>
+                                        <img src={cardImage} alt=""
+                                            onLoad={this.imageLoaded}
+                                        />
+                                        {!this.state.isImageLoaded && <Loader />}
                                         <div className="card-tag">{cardTag}</div>
                                         <div className="author-social-activities">
                                             <div className="author-activities comments">
